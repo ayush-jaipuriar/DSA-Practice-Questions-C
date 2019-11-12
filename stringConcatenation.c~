@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char *stringConcatenation(char *destinationString, char *sourceString ) {
+	if (destinationString==NULL || sourceString==NULL) {
+		return destinationString;
+	}
+	char *d= destinationString;
+	while (*d!='\0') {
+		d++;
+	}
+	while (*sourceString!='\0') {
+		*d = *sourceString;
+		d++;
+		sourceString++;
+	}
+	*d = '\0';
+	return destinationString;
+}
+
+int
+main (int argc, char *argv[])
+{
+	printf("Enter the Destination String\n");
+	char destinationString[40];
+	scanf("%s", destinationString);
+	printf("Enter the Source String\n");
+	char sourceString[20];
+	scanf("%s", sourceString);
+	printf("Destination String before concatenation : %s\n", destinationString);
+	printf("Destination String after concatenation : %s\n", stringConcatenation(destinationString, sourceString););
+	
+	return 0;
+}
